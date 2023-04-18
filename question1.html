@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resizable Boxes</title>
+	<style>
+		.box {
+			position: absolute;
+			background-color: #e2defa;
+			border: 1px solid #999;
+			text-align: center;
+			padding: 10px;
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+		.box.width {
+			top: 50%;
+			left: 50%;
+			transform: translate(50%, -50%);
+			height: 200px;
+			width: 200px;
+		}
+		.box.height {
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			height: 200px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box width">(Right Click on me) Window Width:   </div>
+	<div class="box height">(Left Click on me) Window Height: </div>
+
+	<script>
+		var widthBox = document.querySelector('.width');
+		var heightBox = document.querySelector('.height');
+
+		widthBox.addEventListener('contextmenu', function(e) {
+			e.preventDefault();
+			alert("Right-click is disabled on this box!");
+		});
+
+		heightBox.addEventListener('mousedown', function(e) {
+			if (e.button === 0) {
+				e.preventDefault();
+				alert("Left-click is disabled on this box!");
+			}
+		});
+
+		window.addEventListener('resize', function() {
+			widthBox.textContent = "(Right Click on me) Window Width: " + window.innerWidth + "px";
+			heightBox.textContent = " (Right Click on me) Window Height: " + window.innerHeight + "px";
+		});
+
+		widthBox.textContent += window.innerWidth + "px";
+		heightBox.textContent += window.innerHeight + "px";
+	</script>
+</body>
+</html>
