@@ -1,4 +1,4 @@
-# Coding-Exercice
+# Exercice
 **This coding test consists of four exercises that utilize Vanilla JavaScript. The exercises cover topics such as Promises, Async/Await, and working with Arrays and Objects.**
 
 ***Question 1:*** In this exercise, the task was to create two boxes that display the width and height of the window. Right-clicking on the width box was to be disabled, while left-clicking on the height box was to be disabled. An alert message was to be displayed if a user attempted to click the disabled button. This exercise tested the ability to work with DOM elements and events.
